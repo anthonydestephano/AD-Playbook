@@ -62,10 +62,10 @@ A summary of the access policies in place can be found in the table below.
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it was quick and efficent without errors in the code to affect the machines.
 
 The playbook implements the following tasks:                                                                                                                                     
- -Install Docker and pip3
- -Increase the VM Memory and Utilization                                                                                                                                         
- -Downloads and configures the Elk Server                                                                                                                                         
- -Sets Published Ports                                                                                                                                                          
+ - Install Docker and pip3
+ - Increase the VM Memory and Utilization                                                                                                                                         
+ - Downloads and configures the Elk Server                                                                                                                                         
+ - Sets Published Ports                                                                                                                                                          
  
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 <img width="1334" alt="Elk Containter Screenshot" src="https://user-images.githubusercontent.com/87278815/138806236-66100f0d-dc9d-4f24-95de-53067294ea89.PNG">
@@ -73,13 +73,13 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
- 1. Web-1: 10.0.0.9
- 2. Web-2: 10.0.0.11
+ - Web-1: 10.0.0.9
+ - Web-2: 10.0.0.11
 
 We have installed the following Beats on these machines:
   
-  -Metricbeat                                                                                                                                                                    
-  -Filebeat                                                                                                                                                                      
+  - Metricbeat                                                                                                                                                                    
+  - Filebeat                                                                                                                                                                      
 
 These Beats allow us to collect the following information from each machine:
 Metricbeat collects system log information. For example, CPU or Memory logging data could be captured on the original machine and docker machines as well.
@@ -93,7 +93,10 @@ SSH into the control node and follow the steps below:
 - Update the config files to include the private IP of the Elk server
 - Run the playbook, and navigate to Elk-Server-PublicIP:5601/app/kibana and go to where filebeat and metric beat are located to check that the installation worked as expected and that data is flowing through to the system.
 
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_ You update the hosts file in /etc/ansible/hosts. You must specify either the elk server or the webservers along with the IPs. If you do not, the .yml files will not run properly.
-- _Which URL do you navigate to in order to check that the ELK server is running? Elk-Server-{PublicIP}:5601/app/kibana
+- Which files are needed?
+   - [elk-playbook.yml](https://github.com/anthonydestephano/AD-Playbook/blob/ee4871638a2b51bae85a8fee0ecb15c121e356eb/Ansible/install-elk.yml)
+   - [filebeat-playbook.ym](https://github.com/anthonydestephano/AD-Playbook/blob/ee4871638a2b51bae85a8fee0ecb15c121e356eb/Ansible/filebeat-playbook.yml)
+   - [metricbeat-playbook.yml](https://github.com/anthonydestephano/AD-Playbook/blob/ee4871638a2b51bae85a8fee0ecb15c121e356eb/Ansible/metricbeat-playbook.yml)
+- Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_ You update the hosts file in /etc/ansible/hosts. You must specify either the elk server or the webservers along with the IPs. If you do not, the .yml files will not run properly.
+- Which URL do you navigate to in order to check that the ELK server is running? Elk-Server-{PublicIP}:5601/app/kibana
 

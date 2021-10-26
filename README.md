@@ -2,7 +2,8 @@
 
 The files in this repository were used to configure the network depicted below.
 
-!Images/Diagram for Project 1 PDF.pdf
+<img width="1385" alt="Diagram Of Azure Cloud" src="https://user-images.githubusercontent.com/87278815/138806202-1846ccbb-1cda-4cda-8a2f-e533e8a55609.PNG">
+
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -67,8 +68,8 @@ The playbook implements the following tasks:
 - ...
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+<img width="1334" alt="Elk Containter Screenshot" src="https://user-images.githubusercontent.com/87278815/138806236-66100f0d-dc9d-4f24-95de-53067294ea89.PNG">
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:

@@ -5,12 +5,12 @@ The files in this repository were used to configure the network depicted below.
 <img width="1385" alt="Diagram Of Azure Cloud" src="https://user-images.githubusercontent.com/87278815/138806202-1846ccbb-1cda-4cda-8a2f-e533e8a55609.PNG">
 
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the .yml file may be used to install only certain pieces of it, such as Filebeat.
 
 [my-playbook.yml](https://github.com/anthonydestephano/AD-Playbook/blob/7db8991c3f005393b1a77d3bec66ef69fd1c1e10/Ansible/my-playbook.yml)
 
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
   - Beats in Use
@@ -22,22 +22,22 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
+This ensures that the webservers will not take on a heavy load at one time and redirect the traffic to make sure that they do not breakdown.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system traffic.
+- Filebeat works with logstash to make sure data is organized and funneling properly to prevent breakdown on the backend. Its main purpose is to simplify collection, parsing, and visualization of log files coming in.
+- Metricbeat collects statistcal data about system operations such as apache and mysql to help monitor your system. In this case, Metricbeat is keeping track of the docker containers being utilized as well as the original machine it was installed on.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Name     | Function | IP Address | Operating System   |
+|----------|----------|------------|--------------------|
+| Jump Box | Gateway  | 10.0.0.1   |Linux Ubuntu (18.04)|
+| Web-1    | Webserver| 10.0.0.9   |Linux Ubuntu (18.04)|
+| Web-2    | Webserver| 10.0.0.11  |Linux Ubuntu (18.04)|
+| Elk      | Elk Stack| 10.1.0.4   |Linux Ubuntu (18.04)|
 
 ### Access Policies
 
